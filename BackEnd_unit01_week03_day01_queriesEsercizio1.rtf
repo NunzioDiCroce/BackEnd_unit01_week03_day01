@@ -14,7 +14,6 @@ select nome, cognome from clienti where data_nascita between '1982-01-01' and '1
 
 \f1\b Estrarre il numero delle fatture con iva al 20%
 \f0\b0 \
-select fatture.numero_fattura from fatture where iva = 0.2 OPPURE\
 select count(*) from fatture where iva = 0.2\
 \
 
@@ -26,7 +25,7 @@ SUM(importo) as importo_totale_fatture FROM fatture GROUP BY anno_fatturazione\
 
 \f1\b Estrarre i prodotti attivati nel 2017 e che sono in produzione oppure in commercio\
 
-\f0\b0 SELECT * FROM prodotti where (prodotti.in_produzione = true or prodotti.in_commercio) and prodotti.data_attivazione between '2017-01-01' and '2017-01-31'\
+\f0\b0 SELECT * FROM prodotti where (prodotti.in_produzione = true or prodotti.in_commercio = true) and prodotti.data_attivazione between '2017-01-01' and '2017-12-31\
 \
 
 \f1\b Considerando soltanto le fatture con iva al 20 per cento, estrarre il numero di fatture per ogni anno\
