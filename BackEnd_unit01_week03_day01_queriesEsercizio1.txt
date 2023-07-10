@@ -42,3 +42,10 @@ Riportare l'elenco delle fatture (numero, importo, iva e data) con in aggiunta i
 QUERY 7
 select fatture.numero_fattura, fatture.importo, fatture.iva, fatture.data_fattura, fornitori.denominazione
 from fatture inner join fornitori on fatture.numero_fornitore = fornitori.numero_fornitore;
+
+RICHIESTA 8
+Estrarre il totale degli importi delle fatture divisi per residenza dei clienti
+QUERY 8
+select regione_residenza,
+sum (importo) from fatture inner join clienti on fatture.id_cliente = clienti.numero_cliente
+group by regione_residenza;
