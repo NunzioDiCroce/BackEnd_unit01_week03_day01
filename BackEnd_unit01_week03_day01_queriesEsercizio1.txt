@@ -36,3 +36,7 @@ from fatture
 where tipologia = 'tipoA'
 group by extract (year from data_fattura)
 having count(numero_fattura) > 2
+
+RICHIESTA 7
+Riportare l'elenco delle fatture (numero, importo, iva e data) con in aggiunta il nome del fornitore
+QUERY 7
