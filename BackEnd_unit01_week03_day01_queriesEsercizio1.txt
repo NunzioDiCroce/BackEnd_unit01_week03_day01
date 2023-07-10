@@ -53,7 +53,11 @@ group by regione_residenza;
 RICHIESTA 9
 Estrarre il numero dei clienti nati nel 1980 che hanno almeno una fattura superiore a 50 euro
 QUERY 9
-
+--select numero_cliente,
+select count (distinct numero_cliente)
+from fatture inner join clienti on fatture.id_cliente = clienti.numero_cliente
+where extract (year from data_nascita) = 1980 and importo > 50
+--group by numero_cliente
 
 RICHIESTA 10
 
