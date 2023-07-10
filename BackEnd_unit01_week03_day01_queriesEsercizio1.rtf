@@ -23,6 +23,11 @@ select count(*) from fatture where iva = 0.2\
 \f0\b0 SELECT EXTRACT(year FROM data_fattura) AS anno_fatturazione, COUNT(numero_fattura) AS quantit\'e0_fatture,\
 SUM(importo) as importo_totale_fatture FROM fatture GROUP BY anno_fatturazione\
 \
+
+\f1\b Estrarre i prodotti attivati nel 2017 e che sono in produzione oppure in commercio\
+
+\f0\b0 \
+\
 \
 \
 }
