@@ -27,3 +27,12 @@ QUERY 5
 select extract (year from data_fattura) as anno_fatturazione,
 count (numero_fattura) from fatture where iva = 0.2
 group by anno_fatturazione
+
+RICHIESTA 6
+Estrarre gli anni in cui sono state registrate più di 2 fatture con tipologia 'A'
+QUERY 6
+select extract (year from data_fattura)
+from fatture
+where tipologia = 'tipoA'
+group by extract (year from data_fattura)
+having count(numero_fattura) > 2
