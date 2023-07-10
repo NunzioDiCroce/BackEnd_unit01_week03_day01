@@ -28,6 +28,11 @@ SUM(importo) as importo_totale_fatture FROM fatture GROUP BY anno_fatturazione\
 
 \f0\b0 SELECT * FROM prodotti where (prodotti.in_produzione = true or prodotti.in_commercio) and prodotti.data_attivazione between '2017-01-01' and '2017-01-31'\
 \
+
+\f1\b Considerando soltanto le fatture con iva al 20 per cento, estrarre il numero di fatture per ogni anno\
+
+\f0\b0 \
+\
 \
 \
 }
