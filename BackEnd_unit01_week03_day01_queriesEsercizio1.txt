@@ -7,19 +7,23 @@ select nome, cognome from clienti where data_nascita between '1982-01-01' and '1
 RICHIESTA 2
 Estrarre il numero delle fatture con iva al 20%
 QUERY 2
-select count(*) from fatture where iva = 0.2
+select iva, count (*) from fatture where iva = 0.2 group by iva
 
 RICHIESTA 3
 Riportare il numero di fatture e la somma dei relativi importi divisi per anno di fatturazione
 QUERY 3
-SELECT EXTRACT(year FROM data_fattura) AS anno_fatturazione, COUNT(numero_fattura) AS quantità_fatture,
-SUM(importo) as importo_totale_fatture FROM fatture GROUP BY anno_fatturazione
+select extract (year from data_fattura) as anno_fatturazione,
+count (numero_fattura), sum (importo) from fatture
+group by anno_fatturazione
 
 RICHIESTA 4
 Estrarre i prodotti attivati nel 2017 e che sono in produzione oppure in commercio
 QUERY 4
-SELECT * FROM prodotti where (prodotti.in_produzione = true or prodotti.in_commercio = true) and prodotti.data_attivazione between '2017-01-01' and '2017-12-31
+select * from prodotti where (data_attivazione between '2017-01-01' and '2017-12-31') and (in_produzione = true or in_commercio = true)
 
 RICHIESTA 5
 Considerando soltanto le fatture con iva al 20 per cento, estrarre il numero di fatture per ogni anno
 QUERY 5
+select extract (year from data_fattura) as anno_fatturazione,
+count (numero_fattura) from fatture where iva = 0.2
+group by anno_fatturazione
