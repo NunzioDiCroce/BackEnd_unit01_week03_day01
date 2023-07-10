@@ -49,3 +49,18 @@ QUERY 8
 select regione_residenza,
 sum (importo) from fatture inner join clienti on fatture.id_cliente = clienti.numero_cliente
 group by regione_residenza;
+
+RICHIESTA 9
+Estrarre il numero dei clienti nati nel 1980 che hanno almeno una fattura superiore a 50 euro
+QUERY 9
+
+
+RICHIESTA 10
+
+QUERY 10
+
+
+
+
+
+
