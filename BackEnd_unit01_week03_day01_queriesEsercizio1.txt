@@ -62,9 +62,7 @@ where extract (year from data_nascita) = 1980 and importo > 50
 RICHIESTA 10
 Estrarre una colonna di nome "Denominazione" contenente il nome, seguito da un carattere "-", seguito dal cognome, per i soli clienti residenti nella regione Lombardia
 QUERY 10
-
-
-
-
+select nome || '-' || cognome as Denominazione
+from clienti where regione_residenza = 'Lombardia'
 
 
